@@ -4,16 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg1"
     tools:context=".Signup">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewLogo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="56dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/button_phone"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="39dp"
+        android:background="@drawable/btn_bg_phone"
+        android:drawableStart="@drawable/baseline_phone_24"
+        android:fontFamily="@font/alata"
+        android:paddingHorizontal="30dp"
+        android:text="Sign in With Phone"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOr" />
+
+    <Button
+        android:id="@+id/button_google"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="161dp"
+        android:background="@drawable/btn_bg"
+        android:drawableStart="@drawable/icons_google"
+        android:fontFamily="@font/alata"
+        android:paddingHorizontal="15dp"
+        android:text="Sign in With Google"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <TextView
+        android:id="@+id/textViewOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:fontFamily="@font/alata"
+        android:text="OR"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_google" />
+
+    <TextView
+        android:id="@+id/textViewContactus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="108dp"
+        android:fontFamily="@font/alata"
+        android:text="Contact US !!!"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewQueries"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewQueries" />
+
+    <TextView
+        android:id="@+id/textViewQueries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:fontFamily="@font/alata"
+        android:text="For any Queries"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_phone"
+        app:layout_constraintVertical_bias="0.726" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

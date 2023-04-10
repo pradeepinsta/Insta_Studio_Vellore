@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "575102053086",
+    "project_id": "insta-studio-2cfda",
+    "storage_bucket": "insta-studio-2cfda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575102053086:android:c4c709d7eed13daf7af04f",
+        "android_client_info": {
+          "package_name": "com.example.instastudiovellore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575102053086-im1q0fdhov97s249t39tigvsmpet3m5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEas7ea0pNbWfcM4gffsFkDsPkhMgjXvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575102053086-im1q0fdhov97s249t39tigvsmpet3m5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Insta Studio Vellore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nameboard">Welcome to INSTA STUDIO</string>
+    <string name="description">We are a Candid Wedding Photography Studio located in Vellore. Our team of wedding photographers is here to help you give a significant, no-stress, and genuine experience while recording your love in a one-of-a-kind way. We want to be there for you throughout the day and planning process. With our candid photography skills, we have created hundreds of unique love tales all across the world. Our wish for your photographs is that they leave you with pleasant memories and all the feeling that sends chills down your spine and goose bumps down your arms. We are passionate about every frame, and our crew works extremely hard to ensure that you treasure your big day for a long time with their professional wedding photography. we have always liked being a part of a unique Indian wedding, and we cant wait to be a part of yours! </string>
+    <string name="events">300+Events</string>
 </resources>

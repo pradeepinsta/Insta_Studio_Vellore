@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"
+        />
+    <item android:icon="@drawable/baseline_linked_camera_24"
+        android:title="Portfolio"
+        android:id="@+id/portfolio"/>
+    <item android:icon="@drawable/baseline_menu_book_24"
+        android:title="Bookings"
+        android:id="@+id/booking"/>
+    <item android:icon="@drawable/baseline_contacts_24"
+        android:title="Contact Us"
+        android:id="@+id/setting"/>
+</menu>

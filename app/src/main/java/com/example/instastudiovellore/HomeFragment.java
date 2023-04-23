@@ -8,11 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+
 public class HomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -23,6 +31,8 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    ImageSlider imageSlider;
+    View mView;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -53,12 +63,29 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        mView =  inflater.inflate(R.layout.fragment_home, container, false);
+
+        ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list
+
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC02263-min.JPG?alt=media&token=f28b6912-b004-496d-b4fd-44ccf8c2e1ec" , ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC_5666.jpg?alt=media&token=1bdff253-ec0e-4e36-8943-1721f173244b",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC_2183.jpg?alt=media&token=b86366e8-0d23-4af6-b7dd-aa7d5715c8ee",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC_8714.jpg?alt=media&token=7bc82005-e0db-433c-9446-deaf1c945e02",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FMRI_3743.jpg?alt=media&token=7fc4db49-652e-44c2-82c1-33dbd102685c",ScaleTypes.CENTER_CROP));
+
+        imageSlider = mView.findViewById(R.id.image_slider_wedding);
+        imageSlider.setImageList(imageList);
+//      imageSlider.setSlideAnimation(AnimationTypes.ZOOM_IN);
+        imageSlider.startSliding(5000);
+
+        return mView;
     }
 }

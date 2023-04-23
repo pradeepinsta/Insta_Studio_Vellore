@@ -7,7 +7,7 @@
     android:background="@drawable/bg1"
     tools:context=".PhoneSignActivity">
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextPhone"
         android:layout_width="250dp"
         android:layout_height="40dp"
@@ -15,7 +15,9 @@
         android:background="@drawable/edit_text"
         android:ems="10"
         android:fontFamily="@font/alata"
+        android:textColor="@color/black"
         android:hint="Enter Phone Number"
+        android:textColorHint="@color/grey_font"
         android:inputType="phone"
         android:paddingHorizontal="10dp"
         android:selectAllOnFocus="true"
@@ -37,16 +39,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mail" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonOtp"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:background="@drawable/btn_bg"
-        android:backgroundTint="#FF8400"
+        android:backgroundTint="#FB8C00"
         android:fontFamily="@font/alata"
         android:text="Send otp"
-        android:textColor="@color/white"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

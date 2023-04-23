@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
     BookingFragment mBookingFragment;
     SettingFragment mSettingFragment;
 
-    Button signout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +43,6 @@ public class HomeActivity extends AppCompatActivity {
         mSettingFragment = new SettingFragment();
 
         mBottomNavigationView = findViewById(R.id.bottomNavigationView);
-
-        signout = findViewById(R.id.buttonSignout);
-
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent i = new Intent(HomeActivity.this,Signup.class);
-                startActivity(i);
-                finish();
-            }
-        });
 
         mBottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

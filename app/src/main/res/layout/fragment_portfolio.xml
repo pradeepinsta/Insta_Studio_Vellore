@@ -4,17 +4,15 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg3"
-    android:contentDescription="Portfolio"
     android:fillViewport="true">
 
     <FrameLayout
         android:id="@+id/portfolio"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".PortfolioFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,15 +21,15 @@
 
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewWeddings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="302dp"
+                android:elevation="20dp"
                 android:fontFamily="@font/alata"
                 android:text="Weddings"
-                android:elevation="20dp"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +47,157 @@
                 app:iss_text_align="CENTER"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewWeddings" />
+
+            <TextView
+                android:id="@+id/textViewBabyshower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="277dp"
+                android:fontFamily="@font/alata"
+                android:text="Baby Shower"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_slider_wedding" />
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider_babyshower"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="30dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_period="1000"
+                app:iss_text_align="CENTER"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBabyshower"
+                tools:ignore="UnknownId" />
+
+            <TextView
+                android:id="@+id/textViewPrepostwedding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="222dp"
+                android:fontFamily="@font/alata"
+                android:text="Pre/Post Weddings"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_slider_babyshower" />
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider_prepostwedding"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="30dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_period="1000"
+                app:iss_text_align="CENTER"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPrepostwedding" />
+
+
+            <TextView
+                android:id="@+id/textViewHouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="295dp"
+                android:fontFamily="@font/alata"
+                android:text="House Warming"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_slider_prepostwedding" />
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider_housewarming"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="30dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_period="1000"
+                app:iss_text_align="CENTER"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewHouse"/>
+
+
+            <TextView
+                android:id="@+id/textViewBaby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="315dp"
+                android:fontFamily="@font/alata"
+                android:text="Baby's Shoot"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_slider_housewarming" />
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider_baby"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="30dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_period="1000"
+                app:iss_text_align="CENTER"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewBaby"/>
+
+
+
+            <TextView
+                android:id="@+id/textViewProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="299dp"
+                android:fontFamily="@font/alata"
+                android:text="Product Shoots"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_slider_baby" />
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider_product"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="32dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_period="1000"
+                app:iss_text_align="CENTER"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewProduct"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

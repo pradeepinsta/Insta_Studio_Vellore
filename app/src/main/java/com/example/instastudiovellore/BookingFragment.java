@@ -1,5 +1,7 @@
 package com.example.instastudiovellore;
 
+import android.app.DatePickerDialog;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,11 @@ public class BookingFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView textViewDate;
+    private EditText editTextDate;
+
+    View mView;
 
     public BookingFragment() {
         // Required empty public constructor
@@ -59,6 +71,35 @@ public class BookingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_booking, container, false);
+        mView = inflater.inflate(R.layout.fragment_booking, container, false);
+
+        textViewDate = mView.findViewById(R.id.textViewDate);
+        editTextDate = mView.findViewById(R.id.editTextDate);
+
+        final Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DatePickerDialog dialog = new DatePickerDialog(mView.getContext(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+                        month = month+1;
+                        String date = dayOfMonth +"/"+month+"/"+year;
+                        editTextDate.setText(date);
+
+                    }
+                },year,month,day);
+                dialog.show();
+
+            }
+        });
+
+        return mView;
     }
 }

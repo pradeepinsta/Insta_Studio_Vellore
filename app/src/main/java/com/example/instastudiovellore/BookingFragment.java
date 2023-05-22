@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -49,7 +51,9 @@ public class BookingFragment extends Fragment {
     private EditText editTextLocation;
     private EditText editTextEvent;
     Button book;
-    private DatabaseReference mDatabaseReference;
+
+    FirebaseDatabase mFirebaseDatabase;
+    DatabaseReference mDatabaseReference;
     String name, phone, location, event,uid;
     String date , eDate;
 
@@ -105,8 +109,8 @@ public class BookingFragment extends Fragment {
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Bookings");
-        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        uid = currentFirebaseUser.getUid();
+//        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//        uid = currentFirebaseUser.getUid();
 
         editTextDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,38 +135,69 @@ public class BookingFragment extends Fragment {
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name = editTextName.getText().toString();
-                phone = editTextPhone.getText().toString();
-                location = editTextLocation.getText().toString();
-                event = editTextEvent.getText().toString();
 
-                Log.d(TAG, "onClick: Name " + name);
-                Log.d(TAG, "onClick: Phone " + phone);
-                Log.d(TAG, "onClick: Location " + location);
-                Log.d(TAG, "onClick: event " + event);
-                Log.d(TAG, "onClick: date " + eDate);
+//                newBooking();
 
-                newBooking(uid,name,phone,location,event,eDate);
-                FirebaseDatabase database =FirebaseDatabase.getInstance();
+                try {
+                    name = editTextName.getText().toString();
+                    phone = editTextPhone.getText().toString();
+                    location = editTextLocation.getText().toString();
+                    event = editTextEvent.getText().toString();
 
-                Log.d(TAG, "onClick: Firebase database" + database);
-                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                uid = currentFirebaseUser.getUid().toString();
-                DatabaseReference databaseReference = database.getReference().child("Bookings");
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Toast.makeText(getActivity(), "Congratulations! Your booking has been successfully confirmed. ", Toast.LENGTH_SHORT).show();
-                    }
+                    Log.d(TAG, "onClick: Name " + name);
+                    Log.d(TAG, "onClick: Phone " + phone);
+                    Log.d(TAG, "onClick: Location " + location);
+                    Log.d(TAG, "onClick: event " + event);
+                    Log.d(TAG, "onClick: date " + eDate);
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                    if (!name.isEmpty() && phone.isEmpty() && location.isEmpty() && event.isEmpty() && eDate.isEmpty())
+                    {
+                        User users = new User(name,phone,location,event,eDate);
+                        mFirebaseDatabase = FirebaseDatabase.getInstance();
+                        mDatabaseReference = mFirebaseDatabase.getReference("Bookings");
+                        mDatabaseReference.child(name).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
 
-                    }
-                });
+                                editTextName.setText("");
+                                editTextPhone.setText("");
+                                editTextLocation.setText("");
+                                editTextEvent.setText("");
+                                editTextDate.setText("");
+                                Toast.makeText(getActivity(), "Congratulations! Your booking has been successfully confirmed. ", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
 
             }
+
+                    newBooking();
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+                    Log.d(TAG, "onClick: Firebase database" + database);
+                    FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                    uid = currentFirebaseUser.getUid().toString();
+                    DatabaseReference databaseReference = database.getReference().child("Bookings");
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Toast.makeText(getActivity(), "Congratulations! Your booking has been successfully confirmed. ", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                }catch (Exception e)
+                {
+                    Log.e(TAG, "onClick: ",e );
+                    Toast.makeText(getActivity(), "Error; " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+             }
+
         });
+
 
         return mView;
     }
@@ -186,9 +221,12 @@ public class BookingFragment extends Fragment {
         }
     }
 
-    private void newBooking(String userId, String name,String phone,String location, String event, String date)
+    public void newBooking()
     {
         User user = new User(name,phone,location,event,date);
-        mDatabaseReference.child("Bookings").child(userId).setValue(user);
+//        mDatabaseReference.child("Bookings").child(userId).setValue(user);
+        mDatabaseReference.push().setValue(user);
+        Toast.makeText(getActivity(), "Successfully Booked", Toast.LENGTH_SHORT).show();
     }
+
 }

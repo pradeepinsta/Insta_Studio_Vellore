@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.instastudiovellore.databinding.ActivityMainBinding;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.FirebaseApp;
@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
 
         mBottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        mBottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 }
                 return false;
+
             }
         });
 

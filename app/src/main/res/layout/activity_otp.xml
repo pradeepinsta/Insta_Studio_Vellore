@@ -16,9 +16,11 @@
         android:ems="10"
         android:fontFamily="@font/alata"
         android:hint="Enter OTP"
+        android:textColorHint="@color/grey_font"
         android:inputType="number"
         android:paddingHorizontal="15dp"
         android:textSize="12sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextOtp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSignin"
         android:layout_width="125dp"
         android:layout_height="wrap_content"

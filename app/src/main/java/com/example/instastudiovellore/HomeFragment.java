@@ -75,11 +75,11 @@ public class HomeFragment extends Fragment {
 
         ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list
 
-        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC02263-min.JPG?alt=media&token=f28b6912-b004-496d-b4fd-44ccf8c2e1ec" , ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC_5666.jpg?alt=media&token=1bdff253-ec0e-4e36-8943-1721f173244b",ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC_2183.jpg?alt=media&token=b86366e8-0d23-4af6-b7dd-aa7d5715c8ee",ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FDSC_8714.jpg?alt=media&token=7bc82005-e0db-433c-9446-deaf1c945e02",ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-2cfda.appspot.com/o/Home%20Page%2FMRI_3743.jpg?alt=media&token=7fc4db49-652e-44c2-82c1-33dbd102685c",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-vellore-7a280.appspot.com/o/Home%20Page%2FDSC02263-min.JPG?alt=media&token=38840462-0c9e-4f33-83e9-393d1773c8da" , ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-vellore-7a280.appspot.com/o/Home%20Page%2FDSC_5666.jpg?alt=media&token=61ebeaa8-6eae-4179-816b-3ce4eb892118",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-vellore-7a280.appspot.com/o/Home%20Page%2FDSC_2183.jpg?alt=media&token=fb0bb5b2-7c5d-4ca6-853e-d6933021f712",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-vellore-7a280.appspot.com/o/Home%20Page%2FDSC_8714.jpg?alt=media&token=78e7e569-0761-4308-9469-23f075290e8b",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/insta-studio-vellore-7a280.appspot.com/o/Home%20Page%2FMRI_3743.jpg?alt=media&token=0ff525a4-0938-497b-bbcb-1d49cae799b0",ScaleTypes.CENTER_CROP));
 
         imageSlider = mView.findViewById(R.id.image_slider_wedding);
         imageSlider.setImageList(imageList);
